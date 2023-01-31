@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 project( mono-vo )
-find_package( OpenCV 3.0 REQUIRED )
+
+find_package(OpenCV 3.4 REQUIRED PATHS "/usr/local/include/opencv")
 
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
@@ -10,3 +11,4 @@ file(GLOB viso
 )
 add_executable( vo ${viso} )
 target_link_libraries( vo ${OpenCV_LIBS} )
+
